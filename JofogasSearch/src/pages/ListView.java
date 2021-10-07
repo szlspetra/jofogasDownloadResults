@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class ListView {
 	WebDriver driver;
 	String strCookieButton = "//*[@id=\"CybotCookiebotDialogBodyButtonAccept\"]";
+	String strListElements = "//*[@class=\"list-items\"]//*[@class=\"item-title\"]";
 	
 	public ListView(WebDriver driver) {
 		this.driver = driver;
@@ -19,4 +20,15 @@ public class ListView {
 			return;
 		}
 	}
+	
+	public void clickToListElement () {
+		try {
+			driver.findElement(By.xpath(strCookieButton)).click();
+			
+		} catch (Exception e) {
+			return;
+		}
+	}
+	
+	
 }
