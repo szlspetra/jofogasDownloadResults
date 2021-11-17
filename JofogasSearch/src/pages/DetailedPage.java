@@ -14,13 +14,23 @@ public class DetailedPage {
 	String strSize = "//*[@class=\"size\"]";
 	String strCity = "//*[contains(@itemprop, 'address')]//*[contains(@class, 'Value')]";
 	String strCategory = "//*[contains(@class, 'Category')]//*[contains(@class, 'Value')]";
+	String strDescription = "//*[contains(@id, 'linkifyDescription')]";
+	String strPics = "//*[contains(@id, 'gallery_pic')]";
+	
+	//For house
 	String strCondition = "//*[contains(@class, 'realestate_condition')]//*[contains(@class, 'Value')]";
 	String strHeating = "//*[contains(@class, 'heating')]//*[contains(@class, 'Value')]";
 	String strBuilding = "//*[contains(@class, 'building_type')]//*[contains(@class, 'Value')]";
 	String strProprietary = "//*[contains(@class, 'proprietary')]//*[contains(@class, 'Value')]";
 	String strGargen = "//*[contains(@class, 'garden_size')]//*[contains(@class, 'Value')]";
-	String strDescription = "//*[contains(@id, 'linkifyDescription')]";
-	String strPics = "//*[contains(@id, 'gallery_pic')]";
+	
+	//For land
+	String strDrainage = "//*[contains(@class, 'drainage_type')]//*[contains(@class, 'Value')]";
+	String strElecticity = "//*[contains(@class, 'electricity_type')]//*[contains(@class, 'Value')]";
+	String strWater = "//*[contains(@class, 'water_type')]//*[contains(@class, 'Value')]";
+	String strGas = "//*[contains(@class, 'gas_type')]//*[contains(@class, 'Value')]";
+	String strLandSize = "//*[contains(@class, 'size')]//*[contains(@class, 'Value')]";
+	String strBuildIn = "//*[contains(@class, 'build_percent')]//*[contains(@class, 'Value')]";
 	
 	WebDriver driver;
 
@@ -32,7 +42,7 @@ public class DetailedPage {
 		try {
 			return driver.findElement(By.xpath(strPrice)).getText();			
 		} catch (Exception e) {
-			return null;
+			return "";
 		}
 	}
 	
@@ -40,7 +50,7 @@ public class DetailedPage {
 		try {
 			return driver.findElement(By.xpath(strSize)).getText();			
 		} catch (Exception e) {
-			return null;
+			return "";
 		}
 	}
 	
@@ -48,7 +58,7 @@ public class DetailedPage {
 		try {
 			return driver.findElement(By.xpath(strCity)).getText();			
 		} catch (Exception e) {
-			return null;
+			return "";
 		}
 	}
 	
@@ -56,7 +66,7 @@ public class DetailedPage {
 		try {
 			return driver.findElement(By.xpath(strCategory)).getText();			
 		} catch (Exception e) {
-			return null;
+			return "";
 		}
 	}
 	
@@ -64,7 +74,7 @@ public class DetailedPage {
 		try {
 			return driver.findElement(By.xpath(strCondition)).getText();			
 		} catch (Exception e) {
-			return null;
+			return "";
 		}
 	}
 	
@@ -72,7 +82,7 @@ public class DetailedPage {
 		try {
 			return driver.findElement(By.xpath(strHeating)).getText();			
 		} catch (Exception e) {
-			return null;
+			return "";
 		}
 	}
 	
@@ -96,7 +106,7 @@ public class DetailedPage {
 		try {
 			return driver.findElement(By.xpath(strGargen)).getText();			
 		} catch (Exception e) {
-			return null;
+			return "";
 		}
 	}
 	
@@ -104,7 +114,55 @@ public class DetailedPage {
 		try {
 			return driver.findElement(By.xpath(strDescription)).getText();			
 		} catch (Exception e) {
-			return null;
+			return "";
+		}
+	}
+	
+	public String getWater() {
+		try {
+			return driver.findElement(By.xpath(strWater)).getText();			
+		} catch (Exception e) {
+			return "";
+		}
+	}
+	
+	public String getElecticity() {
+		try {
+			return driver.findElement(By.xpath(strElecticity)).getText();			
+		} catch (Exception e) {
+			return "";
+		}
+	}
+	
+	public String getDrainage() {
+		try {
+			return driver.findElement(By.xpath(strDrainage)).getText();			
+		} catch (Exception e) {
+			return "";
+		}
+	}
+	
+	public String getBuildIn() {
+		try {
+			return driver.findElement(By.xpath(strBuildIn)).getText();			
+		} catch (Exception e) {
+			return "";
+		}
+	}
+	
+	public String getLandSize() {
+		try {
+			return driver.findElement(By.xpath(strLandSize)).getText();			
+		} catch (Exception e) {
+			return "";
+		}
+	}
+	
+	public String getGas() {
+		try {
+			return driver.findElement(By.xpath(strGas)).getText();			
+		} catch (Exception e) {
+			return "";
 		}
 	}
 	

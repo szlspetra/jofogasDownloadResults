@@ -36,7 +36,11 @@ public class ListView {
 	}
 	
 	public void clickNextPage () {
-		driver.findElement(By.xpath(nextPageButton_exist)).click();
+		try {
+			driver.findElement(By.xpath(nextPageButton_exist)).click();
+		} catch (Exception e) {
+			System.out.println("End of list");
+		}
 	}
 	
 	public boolean isNextPageButtonExists() {

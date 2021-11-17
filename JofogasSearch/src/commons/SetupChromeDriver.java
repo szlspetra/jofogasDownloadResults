@@ -11,8 +11,8 @@ public class SetupChromeDriver {
 	public SetupChromeDriver() {
 	
 		System.setProperty("webdriver.chrome.driver", strCurrDir+"\\drivers\\chromedriver.exe");
-		
-		driver = new ChromeDriver(setHeadlessMode());
+		//driver = new ChromeDriver(setHeadlessMode());
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 	}
 	
